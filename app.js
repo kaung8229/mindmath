@@ -21,6 +21,12 @@ var numui = document.querySelector('.num');
 var startbtn = document.querySelector('.startbtn');
 
 
+var rightnumui = document.querySelector('.rightnum');
+var answernumber = document.getElementById('answernumber');
+
+var checkbtn = document.querySelector('.checkbtn');
+
+
 startbtn.addEventListener('click',function(e){
     // e.preventDefault();
     if(digits.value != "" && counts.value != ""){
@@ -29,10 +35,17 @@ startbtn.addEventListener('click',function(e){
     }
 });
 
+checkbtn.addEventListener('click',function(e){
+
+    if(answernumber.value != ""){
+        e.preventDefault();
+        checkanswer();
+    }
+
+})
+
 var rannum = 0;
-
-
-
+var rightans = 0;
 
 // const synth = window.speechSynthesis
 // let textt = "Hey there";
@@ -41,13 +54,11 @@ var rannum = 0;
 // synth.speak(utterthis);
 
 
-
 function progresscheck(){
     // console.log(digits.value);
     // console.log(counts.value);
     // console.log(txt.checked);
     // console.log(voc.checked);
-
     
     // randomnumber();
 
@@ -116,6 +127,8 @@ function randomnumber(){
     rannum = Math.round((Math.random() * numdig) + 1);
     // console.log(rannum);
 
+    rightans += rannum;
+
     
 
 }
@@ -146,6 +159,31 @@ function showreadytext(){
 
 }
 
+function checkanswer(){
+    // console.log(answernumber.value);
+    // console.log(rightans);
+
+    if(answernumber.value == rightans){
+        showansright();
+        checkbtn.style.backgroundColor = "green";
+        checkbtn.innerHTML = "Start again";
+        answernumber.style.color = "green";
+        answernumber.style.borderColor = "green";
+        reloadbtn();
+    }else{
+        rightnumui.innerHTML = rightans;
+        showanswrong();
+        checkbtn.style.backgroundColor = "red";
+        checkbtn.innerHTML = "Try again";
+        answernumber.style.color = "red";
+        answernumber.style.borderColor = "red";
+        reloadbtn();
+    }
+
+
+}
+
+
 function closefun(){
     container.classList.add("close");
     ansright.classList.add("close");
@@ -175,6 +213,14 @@ function showansright(){
 }
 function showanswrong(){
     answrong.classList.remove("close");
+}
+
+function reloadbtn(){
+
+    checkbtn.addEventListener('click',function(){
+        window.location.reload();
+    })
+
 }
 
 

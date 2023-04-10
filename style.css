@@ -169,6 +169,60 @@ input::placeholder{
 }
 
 
+/* make it responsive */
+
+@media (max-width: 450px) {
+    
+    body{
+        padding: 30px;
+    }
+    .container{
+        width: 100%;
+        padding: 30px 0px;
+    }
+
+    .set-group:not(.set-group:nth-of-type(3)) {
+        padding: 0 30px;
+        flex-direction: column;
+    }
+
+    .set-group:nth-of-type(3){
+        padding: 0 30px;
+    }
+
+    .set-group .form-label {
+        width: 100%;
+    }
+
+    .set-group .form-control {
+        width: 100%;
+    }
+
+
+    .progress-box {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .shownum .num {
+        font-size: 3rem;
+    }
+
+    .ans-control {
+        min-width: 100%;
+        width: 100%;
+        padding: 12px 20px;
+    }
+
+    .checkbtn {
+        padding: 12px 100px;
+        font-size: 15px;
+    }
+
+}
+
+
+
 
 
 
