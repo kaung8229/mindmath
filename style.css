@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background: #8ac6eb;
+}
+
+.container{
+    position: relative;
+    width: 500px;
+    border: 1px solid rgba(0,0,0,0.4);
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 10px;
+    background: #fff;
+}
+
+
+.setting{
+    margin-top: 20px;
+}
+.set-group{
+    margin-bottom: 20px;
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+}
+.set-group .form-label{
+    width: 100px;
+    text-align: left;
+    font-size: 1.1rem;
+}
+.set-group .form-control{
+    width: 70%;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    padding: 10px;
+    outline: none;
+    font-size: 17px;
+}
+.set-group .form-control:focus{
+    border-bottom-color: rgba(0,0,0,1);
+}
+
+input[type="radio"]{
+    margin-right: 5px;
+}
+input[type="radio"] + label{
+    margin-right: 15px;
+}
+
+input::placeholder{
+    opacity: 0.5;
+}
+
+.startbtn{
+    width: 80%;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    background: royalblue;
+    color: #fff;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+}
+.startbtn:hover{
+    background: mediumblue;
+}
+
+
+
+
+.progress-box{
+    position: absolute;
+    background-color: rgba(255,255,255,0.9);
+    backdrop-filter: blur(10px);
+    width: 800px;
+    border: 1px solid rgba(0,0,0,0.5);
+    box-shadow: 0 0 50px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    padding: 30px;
+}
+.shownum{
+    width: 100%;
+    height: 300px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.close{
+    display: none;
+}
+.shownum .num{
+    font-size: 3.5rem;
+    letter-spacing: 3px;
+    opacity: 0;
+
+    animation-name: numani;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes numani{
+    0%,100%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+}
+
+
+.ans-control{
+    min-width: 200px;
+    width: 400px;
+    padding: 15px 20px;
+    border-radius: 100px;
+    outline: none;
+    border: 1px solid rgba(0,0,0,0.5);
+    display: block;
+    margin: 0 auto;
+    font-size: 15px;
+    text-align: center;
+}
+
+.checkbtn{
+    padding: 15px 100px;
+    font-size: 16px;
+    background: royalblue;
+    color: #fff;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto 0;
+}
+.checkbtn:hover{
+    background: mediumblue;
+}
+
+
+
+.answer{
+    text-align: center;
+    margin-bottom: 15px;
+}
+.answer h2{
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.answer.right{
+    color: green;
+}
+.answer.wrong{
+    color: red;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mind Maths</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div class="container">
+    <h2>Mind Maths</h2>
+    <div class="setting">
+      <form action="" method="">
+        <div class="set-group">
+          <label for="digits" class="form-label">Digits</label>
+          <input type="number" name="digit" id="digits" class="form-control" autocomplete="off" placeholder="Enter digits" required/>
+        </div>
+        <div class="set-group">
+          <label for="count" class="form-label">Count</label>
+          <input type="number" name="count" id="count" class="form-control" autocomplete="off" placeholder="Enter count" required/>
+        </div>
+        <div class="set-group">
+          <input type="radio" name="radioshow" id="txt" class="form-radio" checked><label for="txt">Text</label>
+          <input type="radio" name="radioshow" id="voc" class="form-radio"><label for="voc">Voice</label>
+        </div>
+        <button type="submit" class="startbtn">Start</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="progress-box close">
+    <div class="answer right">
+      <h2>Correct!</h2>
+    </div>
+    <div class="answer wrong">
+      <h2>Incorrect!</h2>
+      <span>The answer is <span class="rightnum">567</span></span>
+    </div>
+    <div class="shownum">
+      <span class="num">567</span>
+    </div>
+    <div class="answerbox">
+      <input type="number" id="number" class="ans-control" placeholder="Write answer" autocomplete="off">
+      <button type="button" class="checkbtn">Submit</button>
+    </div>
+  </div>
+  
+  
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script src="./app.js"></script>
+
+</body>
+</html>
