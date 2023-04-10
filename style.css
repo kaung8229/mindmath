@@ -171,7 +171,7 @@ input::placeholder{
 
 /* make it responsive */
 
-@media (max-width: 450px) {
+@media (max-width: 500px) {
     
     body{
         padding: 30px;
