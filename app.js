@@ -143,6 +143,7 @@ function speaknumbervoice(){
     const utternum = new SpeechSynthesisUtterance(rannum);
 
     utternum.rate = 2;
+    utternum.lang = "en-US";
 
     speaker.speak(utternum);
 
