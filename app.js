@@ -25,6 +25,7 @@ var rightnumui = document.querySelector('.rightnum');
 var answernumber = document.getElementById('answernumber');
 
 var checkbtn = document.querySelector('.checkbtn');
+var restartbtn = document.querySelector('.restartbtn');
 
 
 startbtn.addEventListener('click',function(e){
@@ -36,13 +37,16 @@ startbtn.addEventListener('click',function(e){
 });
 
 checkbtn.addEventListener('click',function(e){
-
     if(answernumber.value != ""){
         e.preventDefault();
         checkanswer();
     }
-
 })
+
+restartbtn.addEventListener('click',function(){
+    restarter();
+    checkbtn.style.display = "block";
+});
 
 var rannum = 0;
 var rightans = 0;
@@ -75,13 +79,13 @@ function progresscheck(){
                     // console.log("Hello");
                     randomnumber()
                     numui.innerHTML = rannum;
-                },(1500 * (c + 2)))
+                },(1200 * (c + 2)))
             }else{
                 setTimeout(function(){
                     // console.log("finished");
                     closeshownum();
                     showanswerbox();
-                },(1500 * ((+counts.value)+2)))
+                },(1200 * ((+counts.value)+2)))
             }
         }
     }
@@ -154,7 +158,7 @@ function showreadytext(){
                 // console.log(readytext[r++]);
                 numui.innerHTML = readytext[r++];
             }
-        },(1500 * (i + 1)));
+        },(1200 * (i + 1)));
     }
 
 }
@@ -165,21 +169,26 @@ function checkanswer(){
 
     if(answernumber.value == rightans){
         showansright();
-        checkbtn.style.backgroundColor = "green";
-        checkbtn.innerHTML = "Start again";
         answernumber.style.color = "green";
         answernumber.style.borderColor = "green";
-        reloadbtn();
+
+        restartbtn.style.backgroundColor = "green";
+        restartbtn.innerHTML = "Start again";
+
+        checkbtn.style.display = "none";
+        restartbtn.style.display = "block";
     }else{
         rightnumui.innerHTML = rightans;
         showanswrong();
-        checkbtn.style.backgroundColor = "red";
-        checkbtn.innerHTML = "Try again";
         answernumber.style.color = "red";
         answernumber.style.borderColor = "red";
-        reloadbtn();
-    }
 
+        restartbtn.style.backgroundColor = "red";
+        restartbtn.innerHTML = "Try again";
+
+        checkbtn.style.display = "none";
+        restartbtn.style.display = "block";
+    }
 
 }
 
@@ -215,13 +224,28 @@ function showanswrong(){
     answrong.classList.remove("close");
 }
 
-function reloadbtn(){
+function restarter(){
 
-    checkbtn.addEventListener('click',function(){
-        window.location.reload();
-    })
+    answernumber.value = "";
+    answernumber.style.color = "black";
+    answernumber.style.borderColor = "rgba(0,0,0,0.5)";
+    checkbtn.style.backgroundColor = "royalblue";
+    checkbtn.innerHTML = "Check";
+
+    container.classList.remove("close");
+    ansright.classList.remove("close");
+    answrong.classList.remove("close");
+    answerbox.classList.remove('close');
+    progressbox.classList.add("close");
+    showshownum();
+
+    restartbtn.style.display = "none";
+
+    rightans = 0;
 
 }
+
+
 
 
 
