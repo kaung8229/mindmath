@@ -136,18 +136,18 @@ function progresscheck(){
                 setTimeout(function(){
                     // console.log("Hello");
                     if(minus.checked){
-                        randomnumber((numdig * -1),(numdig * 10) -1,numdig);
+                        randomnumber(((numdig * -10) + 1),(numdig * 10) -1,numdig);
                     }else{
                         randomnumber(numdig,(numdig * 10) -1,numdig);
                     }
                     speaknumbervoice();
-                },(1500 * (c + 2)))
+                },(levels * (c + 2)))
             }else{
                 setTimeout(function(){
                     // console.log("finished");
                     closeshownum();
                     showanswerbox();
-                },(1800 * ((+counts.value)+2)))
+                },(1900 * ((+counts.value)+(+digits.value))))
             }
         }
 
@@ -202,7 +202,7 @@ function speaknumbervoice(){
     
     const utternum = new SpeechSynthesisUtterance(rannum);
 
-    utternum.rate = 1.5;
+    utternum.rate = 1.6;
     utternum.lang = "en-US";
 
     speaker.speak(utternum);
