@@ -175,12 +175,14 @@ function randomnumber(min,max,numdig){
             rannum = rannum + numdig;
         }
         // console.log(rannum);
+        // console.log("mi",mi);
         if(mi < 1){
             // console.log("checked");
             rannum = rannum * checkfirstminus(rannum);
             mi++;
         }
     }
+    // console.log("mi",mi);
     // console.log(rannum);
 
     rightans += rannum;
@@ -230,6 +232,8 @@ function showreadytext(){
 function checkanswer(){
     // console.log(answernumber.value);
     // console.log(rightans);
+    once = false;
+    mi = 0;
 
     if(answernumber.value == rightans){
         showansright();
