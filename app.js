@@ -222,7 +222,7 @@ function showreadytext(){
                 numui.innerHTML = readytext[r++];
                 numui.style.animationName = "numani";
                 numui.style.animationDuration = `${(levels/1000)}s`;
-                numui.style.animationDelay = "0.01s";
+                numui.style.animationDelay = "0.015s";
             }
         },(levels * (i + 1)));
     }
