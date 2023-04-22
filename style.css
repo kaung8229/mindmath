@@ -60,17 +60,12 @@ body{
     border-bottom-color: rgba(0,0,0,1);
 }
 
+input[type="checkbox"],
 input[type="radio"]{
     margin-right: 5px;
 }
+input[type="checkbox"] + label,
 input[type="radio"] + label{
-    margin-right: 15px;
-}
-
-input[type="checkbox"]{
-    margin-right: 5px;
-}
-input[type="checkbox"] + label{
     margin-right: 15px;
 }
 
@@ -203,13 +198,19 @@ input::placeholder{
         padding: 30px 0px;
     }
 
-    .set-group:not(.set-group:nth-of-type(3)) {
+    .set-group {
         padding: 0 30px;
         flex-direction: column;
     }
 
     .set-group:nth-of-type(3){
         padding: 0 30px;
+        flex-direction: row;
+    }
+
+    .level-group{
+        padding: 0 20px;
+        flex-direction: row;
     }
 
     .set-group .form-label {
@@ -218,6 +219,15 @@ input::placeholder{
 
     .set-group .form-control {
         width: 100%;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"]{
+        margin-right: 3px;
+    }
+    input[type="checkbox"] + label,
+    input[type="radio"] + label{
+        margin-right: 12px;
     }
 
 
